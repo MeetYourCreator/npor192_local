@@ -1,0 +1,173 @@
+html { box-sizing: border-box; height: 100%;  font-family: 'Noto Sans TC';}
+
+.table-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+
+}
+.header {
+  border-bottom: 2px solid grey;
+  margin: 0px 0px 50px 20px;
+}
+
+#active-cases, #past-cases {
+  padding-bottom: 10px;
+  border: 3px solid white;
+  margin: 0px 20px 0px 0px;
+  outline: none;
+  background-color: white;
+}
+
+.cases-table {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  padding: 10px;
+  color: rgb(39, 39, 39);
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 30px 10px 20px;
+  border-top: 2px solid rgb(239, 239, 240);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  text-align: left;
+  font-family: 'Noto Sans TC'; 
+  font-size: 12px;
+  background-color: rgb(255, 255, 255);
+}
+
+.case-card-wrapper {
+  padding: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  font-size: 12px;
+  background-color: rgb(239, 239, 240);
+}
+
+.case-card {
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+  padding: 20px 10px 20px 10px;
+  border-radius: 10px;
+  margin: 25px 10px 25px 10px;
+  font-size: 12px;
+  background-color: rgb(255, 255, 255);
+}
+
+#status {
+  font-size: 12px;
+}
+
+#ordering-physician {
+  margin-left: 70px;
+  font-size: 12px;
+}
+  
+#patient-name {
+  font-size: 12px;
+}
+  
+#dob {
+  font-size: 12px;
+}
+  
+#activation-date {
+  font-size: 12px;
+}
+  
+#completion-date {
+  font-size: 12px;
+}
+
+.status {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  padding: 10px 0px 10px 0px;
+  border-radius: 10px;
+  width: 160px;
+  font-size: 12px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(95, 30, 30);
+}
+
+.ordering-physician {
+  width: 180px;
+}
+
+.patient-name {
+  margin-left: 145px;
+  text-align: left;
+  width: 180px;
+}
+
+.dob {
+  margin-left: -25px;
+  text-align: center;
+  width: 180px;
+}
+
+.activation-date {
+  text-align: center;
+  width: 180px;
+}
+
+.completion-date {
+  width: 180px;
+}
+
+.button-navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+p {
+  margin: 0px 20px 0px 20px;
+}
+
+.button-navigation {
+  padding: 0px 0px 80px 0px;
+}
+
+#current-page-wrapper {
+  width: 100px;
+}
+
+.pagenumbers {
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+}
+
+.pagenumbers button {
+  border: none;
+  width: 20px;
+  height: 20px;
+  appearance: none;
+  font-size: 8px;
+  background: none;
+}
+
+#select-items{
+
+    width: 300px;
+    height: 50px !important;
+    margin: 0 0 0 11px;
+    padding: 12px 16px 14px 13px;
+    border-radius: 5px;
+    border: solid 1px #e1e1e1;
+    background-color: #ffffff;
+  }
+  .search-label{
+    font-size:12px;
+  }

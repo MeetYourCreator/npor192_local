@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Caris Web Portal Landing Page Case Data Table"
+    />
+    <meta name="author" content="Caris Life Sciences" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <title>Caris Portal</title>
+  </head>
+
+  <body>
+    <main>
+      <section class='table-wrapper'>
+        <header class='header'>
+          <h1>My Cases</h1>
+          <nav>
+            <button id='active-cases'>Active Cases</button>
+            <button id='past-cases'>Past Cases</button>
+          </nav>
+        </header>
+          <!--Start Search dropdown-->
+       <div class="search-wrapper-class">
+        <label class="search-label">Patients:</label>
+        <select name="cars" id="select-items">
+          <option value="All">All</option>
+        </select>
+      </div>
+      <!--End Search dropdown-->
+        <table id='cases-table'>
+          <thead>
+            <tr class="table-header">
+              <th id="status">Status</th>
+              <th id="ordering-physician">Ordering Physician</th>
+              <th id="patient-name">Patient Name</th>
+              <th id="dob">DOB</th>
+              <th id="activation-date">Activation Date</th>
+              <th id="completion-date">Completed Date</th>
+            </tr>
+          </thead>
+          <tbody id='active-cases-table' id='past-cases-table' class="case-card-wrapper">
+          </tbody>
+        </table>
+        <div class='pagenumbers' id='pagination'></div>
+        <section class='button-navigation'>
+        </section>
+      </section>
+    </main>
+  <script src="app.js"></script>
+  </body>
+</html>
+     
+  
