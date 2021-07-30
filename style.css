@@ -1,12 +1,16 @@
 html { box-sizing: border-box; height: 100%;  font-family: 'Noto Sans TC';}
 
-.table-wrapper {
+.grid-container {
+  display: grid;
+
+}
+
+#table-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
-
-
 }
+
 .header {
   border-bottom: 2px solid grey;
   margin: 0px 0px 50px 20px;
@@ -165,9 +169,18 @@ p {
   padding: 12px 16px 14px 13px;
   border-radius: 5px;
   border: solid 1px #e1e1e1;
+  font-size: 12px;
+  font-family: 'Noto Sans TC';
   background-color: #ffffff;
 }
 
 .search-label{
-  font-size:12px;
+  font-size: 12px;
+  font-family: 'Noto Sans TC'
+}
+
+.search-wrapper-class {
+  display: none;
+  margin-bottom: 10px;
+  margin-left: 10px;
 }

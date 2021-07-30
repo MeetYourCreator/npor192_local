@@ -13,12 +13,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="assets/css/select2.min.css">
     <title>Caris Portal</title>
   </head>
 
   <body>
-    <main>
-      <section class='table-wrapper'>
+    <main class='grid-container'>
+      <section id='top-nav' class='grid-item grid-item-1'>
+
+      </section>
+      <section id='table-wrapper' class='grid-item grid-item-2'>
         <header class='header'>
           <h1>My Cases</h1>
           <nav>
@@ -26,14 +30,14 @@
             <button id='past-cases'>Past Cases</button>
           </nav>
         </header>
-          <!--Start Search dropdown-->
-       <div class="search-wrapper-class">
-        <label class="search-label">Patients:</label>
-        <select name="cars" id="select-items">
-          <option value="All">All</option>
-        </select>
-      </div>
-      <!--End Search dropdown-->
+        <!--Start Search dropdown-->
+        <div class="search-wrapper-class">
+          <label class="search-label">Patients:</label>
+          <select name="cars" id="select-items">
+            <option value="All">All</option>
+          </select>
+        </div>
+        <!--End Search dropdown-->
         <table id='cases-table'>
           <thead>
             <tr class="table-header">
@@ -52,7 +56,12 @@
         <section class='button-navigation'>
         </section>
       </section>
+      <section id='recent-cases-cards' class='grid-item grid-item-3'>
+
+      </section>
     </main>
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/select2.min.js"></script>
   <script src="app.js"></script>
   </body>
 </html>
