@@ -9,7 +9,6 @@ const myCasesTable = (() => {
   const buttonNavigation = document.querySelector('.button-navigation');
 
   const reformatDate = date => {
-
     const dateContent = date.textContent;
     const year = dateContent.slice(0, 4);
     const month = dateContent.slice(5, 7);
@@ -17,8 +16,6 @@ const myCasesTable = (() => {
     const newDateFormat = `${month}/${day}/${year}`;
     return newDateFormat;
   };
-
- 
 
   const displayActiveCases = (caseCards, caseCardWrapperElement, rows, page) => {
     caseCardWrapperElement.innerHTML = "";
@@ -28,7 +25,6 @@ const myCasesTable = (() => {
     let paginatedItems = caseCards.slice(start, end);
 
     for (let i = 0; i < paginatedItems.length; i++) {
-
       let caseCard = paginatedItems[i];
       const trCaseCardElement = document.createElement('tr');
       trCaseCardElement.classList ='case-card'; 
@@ -131,11 +127,11 @@ const myCasesTable = (() => {
   };
 
   const renderActiveCaseCards = () => {
-
     displayActiveCases(caseCards, caseCardWrapperElement, rows, currentPage);
     setUpActiveCasesPagination(caseCards, paginationElement, rows);
 
     let totalPages = Math.floor(caseCards.length / rows);
+
     let previousButtonActiveCases = document.createElement('button');
     previousButtonActiveCases.setAttribute('id', 'previous-button-active-cases');
     previousButtonActiveCases.textContent = 'Previous';
@@ -178,7 +174,6 @@ const myCasesTable = (() => {
     buttonNavigation.appendChild(nextButtonActiveCases);
 
     previousButtonActiveCases.addEventListener('click', () => {
-
       if (currentPage === 1) {
           previousButtonActiveCases.style.color = 'rgb(9, 55,232)';
           previousButtonActiveCases.style.backgroundColor = 'rgb(204, 215, 243);';
@@ -193,7 +188,9 @@ const myCasesTable = (() => {
       previousButtonActiveCases.style.color = 'white';
       previousButtonActiveCases.style.backgroundColor = 'rgb(124, 157, 241)';
       previousButtonActiveCases.style.border = '2px solid rgb(9, 55,232)';
+
       let totalPages = Math.floor(caseCards.length / rows);
+
       let pgActiveCases = document.createElement('p')
       pgActiveCases.classList = 'current-page-count-active-cases';
       pgActiveCases.innerText = `${currentPage} of ${totalPages}`;
@@ -205,7 +202,6 @@ const myCasesTable = (() => {
     });
 
     nextButtonActiveCases.addEventListener('click', () => {
-
       if (currentPage === Math.floor(caseCards.length / rows)) {
           nextButtonActiveCases.style.color = 'rgb(9, 55, 232)';
           nextButtonActiveCases.style.backgroundColor = 'rgb(204, 215, 243);';
@@ -220,7 +216,9 @@ const myCasesTable = (() => {
       nextButtonActiveCases.style.color = 'white';
       nextButtonActiveCases.style.backgroundColor = 'rgb(124, 157, 241)';
       nextButtonActiveCases.style.border = '2px solid rgb(9, 55,232)';
+
       let totalPages = Math.floor(caseCards.length / rows);
+
       let pgActiveCases = document.createElement('p');
       pgActiveCases.classList = 'current-page-count-active-cases';
       pgActiveCases.innerText = `${currentPage} of ${totalPages}`;
@@ -247,7 +245,6 @@ const myCasesTable = (() => {
   fetchActiveCaseData();
 
   const displayPastCases = (caseCards, caseCardWrapperElement, rows, page) => {
-
     caseCardWrapperElement.innerHTML = "";
     page--;
     let start = rows * page;
@@ -255,15 +252,12 @@ const myCasesTable = (() => {
     let paginatedItems = caseCards.slice(start, end);
 
     for (let i = 0; i < paginatedItems.length; i++) {
-
       let caseCard = paginatedItems[i];
-
       const trCaseCard = document.createElement('tr');
       trCaseCard.className = "case-card";
       trCaseCard.setAttribute('data-id', `${caseCard.id}`);
       trCaseCard.setAttribute('data-patient-id', `${caseCard.patientId}`);
       trCaseCard.addEventListener('click', () => {alert('Next page')});
-
       caseCard.innerText = caseCard;
 
       const tdStatus = document.createElement('td');
@@ -341,9 +335,9 @@ const myCasesTable = (() => {
   };
 
   const renderPastCaseCards = () => {
-
     displayPastCases(caseCards, caseCardWrapperElement, rows, currentPage);
     setUpPastCasesPagination(caseCards, paginationElement, rows);
+
     let totalPages = Math.floor(caseCards.length / rows);
 
     let previousButtonPastCases = document.createElement('button');
@@ -402,6 +396,7 @@ const myCasesTable = (() => {
       previousButtonPastCases.style.color = 'white';
       previousButtonPastCases.style.backgroundColor = 'rgb(124, 157, 241)';
       previousButtonPastCases.style.border = '2px solid rgb(9, 55,232)';
+
       let totalPages = Math.floor(caseCards.length / rows)
 
       let pgPastCases = document.createElement('p');
@@ -429,6 +424,7 @@ const myCasesTable = (() => {
       nextButtonPastCases.style.color = 'white';
       nextButtonPastCases.style.backgroundColor = 'rgb(124, 157, 241)';
       nextButtonPastCases.style.border = '2px solid rgb(9, 55,232)';
+
       let totalPages = Math.floor(caseCards.length / rows);
 
       let pgPastCases = document.createElement('p');
@@ -487,7 +483,6 @@ const myCasesTable = (() => {
   });
 
   const pastCasesTab = document.querySelector('#past-cases');
-
   pastCasesTab.addEventListener('click', () => {
     fetchPastCaseData();
     const clickPastCasesTab = () => {
@@ -514,7 +509,6 @@ const myCasesTable = (() => {
     };
     clickPastCasesTab();
   });
-
  
   /*---------------
   ---------------
@@ -544,9 +538,9 @@ function matchCustom(params, data) {
 }
 
 function creatingSearchOptions() {
-
   const selectOptionsBody = document.querySelector('#select-items');
   const selectOptions = document.querySelectorAll('#select-items option');
+
   for (const elem of selectOptions) {
     elem.remove();
   }
@@ -673,13 +667,8 @@ function capturedSelectedIp(searchInput) {
 })();
 
   //------npor49-------------------------------//
-
   //sorting function ascending
-
   const sortDataAscending = data => ((a,b) => a - b);
-
   //sorting function descending
-
   const sortDataDescending = data => ((a,b) => b - a);
-
   //----------------------------------------------//i
