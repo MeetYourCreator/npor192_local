@@ -8,6 +8,11 @@ const myCasesTable = (() => {
   const paginationElement = document.getElementById('pagination');
   const buttonNavigation = document.querySelector('.button-navigation');
 
+  const orderTestButton = document.getElementById('order-a-test-button');
+  orderTestButton.addEventListener('click', () => {
+    alert('Order Test')
+  })
+
   const reformatDate = date => {
     const dateContent = date.textContent;
     const year = dateContent.slice(0, 4);
