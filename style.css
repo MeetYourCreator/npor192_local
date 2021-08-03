@@ -2,18 +2,26 @@ html { box-sizing: border-box; height: 100%;  font-family: 'Noto Sans TC';}
 
 .grid-container {
   display: grid;
-
 }
 
-#table-wrapper {
+#my-cases-table-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.header {
+.my-cases-table-header {
+  display: flex;
+  flex-direction: column;
   border-bottom: 2px solid grey;
-  margin: 0px 0px 50px 20px;
+  margin: 0px 0px 20px 20px;
+}
+
+#my-cases-table-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0px 0px 0px 0px;
 }
 
 #active-cases, #past-cases {
@@ -24,6 +32,19 @@ html { box-sizing: border-box; height: 100%;  font-family: 'Noto Sans TC';}
   background-color: white;
 }
 
+#order-a-test-button {
+  width: 150px;
+  height: 35px;
+  align-items: flex-end;
+  margin: -30px 30px 0px 0px;
+  border: 2px solid white;
+  border-radius: 10px;
+  outline: none;
+  font-variant-caps: all-small-caps;
+  color: white;
+  background-color: rgb(9, 55,232);
+}
+
 .cases-table {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -32,7 +53,7 @@ html { box-sizing: border-box; height: 100%;  font-family: 'Noto Sans TC';}
   color: rgb(39, 39, 39);
 }
 
-.table-header {
+.cases-table-header {
   display: flex;
   justify-content: space-between;
   padding: 20px 30px 10px 20px;

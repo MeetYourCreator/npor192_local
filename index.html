@@ -18,17 +18,22 @@
   </head>
 
   <body>
-    <main class='grid-container'>
-      <section id='top-nav' class='grid-item grid-item-1'>
+    <main>
+      <section id='top-nav'>
 
       </section>
-      <section id='table-wrapper' class='grid-item grid-item-2'>
-        <header class='header'>
+      <section id='my-cases-table-wrapper'>
+        <header class='my-cases-table-header'>
           <h1>My Cases</h1>
+          <div id='my-cases-table-nav'>
           <nav>
             <button id='active-cases'>Active Cases</button>
             <button id='past-cases'>Past Cases</button>
           </nav>
+          <button id='order-a-test-button'>
+            Order A Test
+          </button>
+          </div>  
         </header>
         <!--Start Search dropdown-->
         <div class="search-wrapper-class">
@@ -40,7 +45,7 @@
         <!--End Search dropdown-->
         <table id='cases-table'>
           <thead>
-            <tr class="table-header">
+            <tr class="cases-table-header">
               <th id="status">Status</th>
               <th id="ordering-physician">Ordering Physician</th>
               <th id="patient-name">Patient Name</th>
@@ -56,7 +61,7 @@
         <section class='button-navigation'>
         </section>
       </section>
-      <section id='recent-cases-cards' class='grid-item grid-item-3'>
+      <section id='recent-cases-cards'>
 
       </section>
     </main>
