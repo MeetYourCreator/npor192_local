@@ -1,9 +1,5 @@
 html { box-sizing: border-box; height: 100%;  font-family: 'Noto Sans TC';}
 
-.grid-container {
-  display: grid;
-}
-
 #my-cases-table-wrapper {
   display: flex;
   flex-direction: column;
