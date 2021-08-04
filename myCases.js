@@ -71,7 +71,7 @@ const myCasesTable = (() => {
       tdStatusElement.textContent = caseCard.status;
         if (tdStatusElement.textContent == 'completed') {
             tdStatusElement.textContent = 'Completed';
-            tdStatusElement.style.backgroundColor = '#5fd76c';
+            tdStatusElement.style.setProperty('--green', '--green');
         } else if (tdStatusElement.textContent == 'new') {
             tdStatusElement.textContent = 'Awaiting Specimen';
             tdStatusElement.style.backgroundColor = '#be63e0';

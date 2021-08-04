@@ -1,5 +1,9 @@
 html { box-sizing: border-box; height: 100%;  font-family: 'Noto Sans TC';}
 
+:root {
+  --green: #5fd76c;
+}
+
 #my-cases-table-wrapper {
   display: flex;
   flex-direction: column;
@@ -115,7 +119,7 @@ html { box-sizing: border-box; height: 100%;  font-family: 'Noto Sans TC';}
   width: 160px;
   font-size: 12px;
   color: rgb(255, 255, 255);
-  background-color: rgb(95, 30, 30);
+  background-color: var(--green);
 }
 
 .ordering-physician {
