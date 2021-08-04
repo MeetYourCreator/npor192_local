@@ -1,3 +1,10 @@
+const landingPage = (() => {
+
+  const orderTestButton = document.getElementById('order-a-test-button');
+  orderTestButton.addEventListener('click', () => {
+    alert('Order Test');
+  });
+
 const myCasesTable = (() => {
 
   let caseCards;
@@ -8,11 +15,6 @@ const myCasesTable = (() => {
   const paginationElement = document.getElementById('pagination');
   const buttonNavigation = document.querySelector('.button-navigation');
 
-  const orderTestButton = document.getElementById('order-a-test-button');
-  orderTestButton.addEventListener('click', () => {
-    alert('Order Test')
-  })
-
   const reformatDate = date => {
     const dateContent = date.textContent;
     const year = dateContent.slice(0, 4);
@@ -21,6 +23,32 @@ const myCasesTable = (() => {
     const newDateFormat = `${month}/${day}/${year}`;
     return newDateFormat;
   };
+
+  const selectedPatientCase = caseCard => {
+    const id = caseCard.id;
+    const activationDate = caseCard.activationDate;
+    const dob = caseCard.dob;
+    const firstName = caseCard.firstName;
+    const lastName = caseCard.lastName;
+    const mrn = caseCard.mrn;
+    const status = caseCard.status;
+    const tumorBoardSubmitted = caseCard.tumorBoardSubmitted;
+  
+    const params = new URLSearchParams();
+    params.append("id", id);
+    params.append("activationDate", activationDate);
+    params.append("dob", dob);
+    params.append("firstName", firstName);
+    params.append("lastName", lastName);
+    params.append("mrn", mrn);
+    params.append("status", status);
+    params.append("tumorBoardSubmitted", tumorBoardSubmitted);
+  
+    const currentUrl = window.location.href
+    const currentDomain = currentUrl.substring(0, currentUrl.indexOf('public'));
+    const patientCaseUrl = `${currentDomain}public/portal/PatientCases.html/${params}`;
+    window.location.href = patientCaseUrl
+  }
 
   const displayActiveCases = (caseCards, caseCardWrapperElement, rows, page) => {
     caseCardWrapperElement.innerHTML = "";
@@ -35,7 +63,7 @@ const myCasesTable = (() => {
       trCaseCardElement.classList ='case-card'; 
       trCaseCardElement.setAttribute('data-id', `${caseCard.id}`);
       trCaseCardElement.setAttribute('data-patient-id', `${caseCard.patientId}`);
-      trCaseCardElement.addEventListener('click', () => {alert('click leads to next page')});
+      trCaseCardElement.addEventListener('click', () => {selectedPatientCase(caseCard)});
       caseCard.innerText = caseCard;
 
       const tdStatusElement = document.createElement('td');
@@ -262,7 +290,7 @@ const myCasesTable = (() => {
       trCaseCard.className = "case-card";
       trCaseCard.setAttribute('data-id', `${caseCard.id}`);
       trCaseCard.setAttribute('data-patient-id', `${caseCard.patientId}`);
-      trCaseCard.addEventListener('click', () => {alert('Next page')});
+      trCaseCard.addEventListener('click', () => {selectedPatientCase(caseCard)});
       caseCard.innerText = caseCard;
 
       const tdStatus = document.createElement('td');
@@ -676,4 +704,5 @@ function capturedSelectedIp(searchInput) {
   const sortDataAscending = data => ((a,b) => a - b);
   //sorting function descending
   const sortDataDescending = data => ((a,b) => b - a);
-  //----------------------------------------------//i
+  //----------------------------------------------//
+})();
